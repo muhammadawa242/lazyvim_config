@@ -53,6 +53,6 @@ return {
             },
         },
 
-        keys = { { "zz", "<cmd>GlobalNote<cr>", desc = "Global Note" } },
+        -- keys = { { "zz", "<cmd>GlobalNote<cr>", desc = "Global Note" } },
     },
 }

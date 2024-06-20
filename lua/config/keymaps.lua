@@ -5,3 +5,4 @@
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>") -- move line up(n)
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>") -- move line down(n)
 vim.keymap.set("n", "<F8>", ":TagbarToggle<CR>") -- f8 to open TagbarToggle
+vim.keymap.set("n", "zz", "<cmd>GlobalNote<cr>") -- for global note
