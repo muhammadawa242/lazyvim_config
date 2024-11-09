@@ -6,6 +6,9 @@ vim.keymap.set("n", "<A-j>", ":m .+1<CR>") -- move line up(n)
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>") -- move line down(n)
 vim.keymap.set("n", "<F8>", ":TagbarToggle<CR>") -- f8 to open TagbarToggle
 vim.keymap.set("n", "zz", "<cmd>GlobalNote<cr>") -- for global note
+vim.keymap.set("n", "<leader>ww", "<cmd>TodoNote<cr>") -- for todo note
+vim.keymap.set("n", "<leader>hh", "<cmd>HowNote<cr>") -- for how note
+vim.keymap.set("n", "<leader>tt", "<cmd>DevNote<cr>") -- for dev note
 vim.keymap.set("n", "<A-t>", "<cmd>TransparentToggle<cr>") -- for global note
 -- vim.keymap.set("n", "<C-c>", "<cmd>CellularAutomaton make_it_rain<cr>")
 -- vim.keymap.set("n", "<C-x>", "<cmd>CellularAutomaton game_of_life<cr>")
