@@ -33,6 +33,17 @@ return {
                 name = "codelldb",
             }
 
+            dap.configurations.cpp = {
+                {
+                    name = "Launch C++ Program",
+                    type = "codelldb", -- Make sure this matches the adapter you are using
+                    request = "launch",
+                    program = "${workspaceFolder}/build/src/flameshot", -- Path to your program
+                    args = { "gui" }, -- Arguments passed to your program
+                    cwd = "${workspaceFolder}",
+                },
+            }
+
             -- require("nvim-dap-virtual-text").setup({
             --     commented = true, -- Show virtual text alongside comment
             -- })
