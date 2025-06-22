@@ -14,7 +14,7 @@ return {
         opts = {
             servers = {
                 harper_ls = {
-                    filetypes = { "markdown", "gitcommit", "lua", "python", "txt" }, -- extend as needed
+                    filetypes = { "markdown", "gitcommit", "lua", "python", "txt" },
                     settings = {
                         ["harper-ls"] = {
                             userDictPath = vim.fn.expand("~/.config/harper-ls/dict.txt"),
@@ -28,6 +28,33 @@ return {
                         },
                     },
                 },
+            },
+            setup = {
+                harper_ls = function(_, _)
+                    -- Define the toggle keymap
+                    vim.keymap.set("n", "<leader>uh", function()
+                        local bufnr = vim.api.nvim_get_current_buf()
+                        local active = false
+
+                        for _, client in pairs(vim.lsp.get_active_clients({ bufnr = bufnr })) do
+                            if client.name == "harper_ls" then
+                                vim.lsp.buf_detach_client(bufnr, client.id)
+                                vim.b.harper_ls_disabled = true
+                                vim.notify("Harper LS detached", vim.log.levels.INFO)
+                                active = true
+                                break
+                            end
+                        end
+                        if not active then
+                            vim.b.harper_ls_disabled = false
+                            local lspconfig = require("lspconfig")
+                            lspconfig.harper_ls.manager:try_add(bufnr)
+                            vim.notify("Harper LS re-attached", vim.log.levels.INFO)
+                        end
+                    end, { desc = "Toggle Harper LS for this file" })
+
+                    return false -- use default setup
+                end,
             },
         },
     },
