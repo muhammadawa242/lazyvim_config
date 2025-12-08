@@ -1,7 +1,7 @@
 return {
     -- Ensure harper_ls is installed via mason
     {
-        "williamboman/mason-lspconfig.nvim",
+        "mason-org/mason-lspconfig.nvim",
         opts = function(_, opts)
             opts.ensure_installed = opts.ensure_installed or {}
             vim.list_extend(opts.ensure_installed, { "harper_ls" })
