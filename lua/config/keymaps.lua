@@ -10,9 +10,9 @@ vim.keymap.set("n", "<leader>ww", "<cmd>TodoNote<cr>") -- for todo note
 vim.keymap.set("n", "<leader>hh", "<cmd>HowNote<cr>") -- for how note
 vim.keymap.set("n", "<leader>tt", "<cmd>DevNote<cr>") -- for dev note
 vim.keymap.set("n", "<A-t>", "<cmd>TransparentToggle<cr>") -- for global note
-vim.keymap.set("n", "<C-c>", "<cmd>CellularAutomaton make_it_rain<cr>")
-vim.keymap.set("n", "<C-x>", "<cmd>CellularAutomaton game_of_life<cr>")
-vim.keymap.set("n", "<C-l>", "<cmd>CellularAutomaton scramble<cr>")
+-- vim.keymap.set("n", "<C-c>", "<cmd>CellularAutomaton make_it_rain<cr>")
+-- vim.keymap.set("n", "<C-x>", "<cmd>CellularAutomaton game_of_life<cr>")
+-- vim.keymap.set("n", "<C-l>", "<cmd>CellularAutomaton scramble<cr>")
 vim.keymap.set("i", "<A-x>", "<Esc>dbxi")
 vim.keymap.set("i", "<A-u>", "<Esc>uwi")
 vim.keymap.set("n", "<A-l>", "<cmd>Gitsigns next_hunk<cr>")
