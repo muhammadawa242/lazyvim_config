@@ -1,6 +1,7 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
+local marks = require("utils.marks")
 
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>") -- move line up(n)
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>") -- move line down(n)
@@ -27,3 +28,12 @@ vim.keymap.set("n", "<S-h>", "<cmd>BufferPrevious<cr>")
 vim.keymap.set("n", "<A-s-l>", "<cmd>BufferMoveNext<cr>")
 vim.keymap.set("n", "<A-s-h>", "<cmd>BufferMovePrevious<cr>")
 vim.keymap.set("v", "<leader>p", '"_dP')
+vim.keymap.set("n", "<leader>cp", "<cmd>GitConflictChooseOurs<cr>", { desc = "Choose Our Version" })
+vim.keymap.set("n", "<leader>ct", "<cmd>GitConflictChooseTheirs<cr>", { desc = "Choose Their Version" })
+vim.keymap.set("n", "<leader>cb", "<cmd>GitConflictChooseBoth<cr>", { desc = "Choose Both Versions" })
+vim.keymap.set("n", "<leader>c0", "<cmd>GitConflictChooseNone<cr>", { desc = "Choose None" })
+vim.keymap.set("n", "]x", "<cmd>GitConflictNextConflict<cr>", { desc = "Next Conflict" })
+vim.keymap.set("n", "[x", "<cmd>GitConflictPrevConflict<cr>", { desc = "Previous Conflict" })
+vim.keymap.set("n", "<leader>m", marks.print_mark_info, {
+    desc = "Print mark location (file, row, col)",
+})

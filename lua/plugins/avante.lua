@@ -1,0 +1,32 @@
+return {
+    --   "yetone/avante.nvim",
+    --   build = vim.fn.has("win32") ~= 0 and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
+    --       or "make",
+    --   event = "VeryLazy",
+    -- -- stylua: ignore
+    -- keys = {
+    --   { "<leader>aa", function() require("avante.api").toggle() end, desc = "Toggle Avante" },
+    --   { "<leader>at", function() require("avante.api").toggle_visual() end, mode = "v", desc = "Toggle Avante (Visual)" },
+    --   { "<leader>an", function() require("avante.api").ask_new() end, desc = "Avante: New Ask" },
+    --   { "<leader>ah", function() require("avante.api").select_history() end, desc = "Avante: Select History" },
+    -- },
+    --   opts = {
+    --       provider = "gemini",
+    --       providers = {
+    --           gemini = {
+    --               model = "gemini-2.5-pro", -- Or any other Gemini model you prefer
+    --               -- model = "gemini-2.5-flash-lite", -- Or any other Gemini model you prefer
+    --           },
+    --       },
+    --       edit = {
+    --           diff_preview = true,
+    --       },
+    --   },
+    --
+    --   dependencies = {
+    --       "nvim-lua/plenary.nvim",
+    --       "MunifTanjim/nui.nvim",
+    --       "nvim-telescope/telescope.nvim", -- Optional dependency
+    --       "hrsh7th/nvim-cmp", -- Optional dependency
+    --   },
+}
