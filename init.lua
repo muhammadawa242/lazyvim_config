@@ -12,3 +12,5 @@ require("telescope").setup({
         },
     },
 })
+
+require("config.telescope.multigrep").setup()
