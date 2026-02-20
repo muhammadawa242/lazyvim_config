@@ -17,6 +17,24 @@ vim.keymap.set("n", "<A-t>", "<cmd>TransparentToggle<cr>") -- for global note
 vim.keymap.set("i", "<A-x>", "<Esc>dbxi")
 vim.keymap.set("i", "<A-u>", "<Esc>uwi")
 vim.keymap.set("n", "<A-l>", "<cmd>Gitsigns next_hunk<cr>")
+vim.keymap.set({ "t", "n" }, "<A-x>", function()
+    if vim.fn.mode() == "t" then
+        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-\\><C-n>", true, false, true), "n", false)
+    else
+        vim.api.nvim_feedkeys("i", "n", false)
+    end
+end, { noremap = true, silent = true })
+
+vim.keymap.set("n", "<C-w>", "<cmd>bd<CR>", { silent = true })
+vim.keymap.set("n", "<leader>bp", "<cmd>BufferPin<cr>")
+vim.keymap.set("n", "<leader>yy", "<cmd>%y<cr>")
+vim.keymap.set(
+    "n",
+    "<leader>xs",
+    "<cmd>call setqflist(sort(getqflist(), {i1, i2 -> bufname(i1.bufnr) == bufname(i2.bufnr) ? 0 : bufname(i1.bufnr) > bufname(i2.bufnr) ? 1 : -1}))<cr>"
+)
+vim.keymap.set("n", "<leader>xa", require("utils.custom_commands").add_current_file_to_qflist)
+vim.keymap.set("n", "<leader>xd", require("utils.custom_commands").remove_opened_buffr)
 vim.keymap.set("n", "<A-h>", "<cmd>Gitsigns prev_hunk<cr>")
 vim.keymap.set("n", "<F5>", "<cmd>UndotreeToggle<cr>")
 vim.keymap.set("n", "<leader>gb", "<cmd>Gitsigns blame_line<cr>")

@@ -5,8 +5,18 @@ return {
     {
         "LazyVim/LazyVim",
         opts = {
-            colorscheme = "gruvbox",
+            colorscheme = "catppuccin-macchiato",
+            -- colorscheme = "gruvbox",
             -- colorscheme = "nightfox",
+            options = {
+                transparent = true,
+                terminal_colors = false,
+                styles = {
+                    comments = "italic",
+                    keywords = "bold",
+                    types = "italic,bold",
+                },
+            },
         },
     },
 }
