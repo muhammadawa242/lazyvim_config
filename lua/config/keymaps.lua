@@ -28,6 +28,10 @@ end, { noremap = true, silent = true })
 vim.keymap.set("n", "<C-w>", "<cmd>bd<CR>", { silent = true })
 vim.keymap.set("n", "<leader>bp", "<cmd>BufferPin<cr>")
 vim.keymap.set("n", "<leader>yy", "<cmd>%y<cr>")
+vim.keymap.set("n", "<leader>yg", function()
+    local line = vim.api.nvim_get_current_line():match("^%s*(.-)%s*$")
+    vim.fn.setreg(vim.v.register, line, "c")
+end, { desc = "Yank trimmed line" })
 vim.keymap.set(
     "n",
     "<leader>xs",
